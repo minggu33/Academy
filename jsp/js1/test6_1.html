@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	// 사용자가 "네이버, 다음, 구글, 네이트..." 입력시 (한/영)
+	// 해당 페이지로 이동
+	
+	var site = prompt("웹페이지를 입력하시오");
+	var url="";
+	
+	switch (site) {
+	case "네이버":
+	case "NAVER":
+	case "naver":
+		//location.href="https://www.naver.com";
+		url = "https://www.naver.com"
+		break;
+		
+	case "다음":	
+	case "daum":
+	case "DAUM":
+		//location.href="https://www.daum.net";
+		url = "https://www.daum.net"
+		break;
+		
+	case "구글":	
+	case "GOOGLE":
+	case "google":
+		//location.href="https://www.google.com";
+		url = "https://www.google.com"
+		break;
+
+	default:
+		alert("해당 페이지는 지원하지 않습니다.")
+		break;
+	}
+	
+	// url에 주소가 있을때
+/* 	if(url != ""){
+		location.href= url;
+	} */
+
+	if(url){
+		location.href= url;
+	}
+
+</script>
+</head>
+<body>
+
+<h1>WebConten/js1/test6_1.html</h1>
+
+</body>
+</html>

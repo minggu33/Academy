@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// 날짜 (Date) 객체 - 내장객체
+	// 날짜 정보 + 시간정보
+	
+	// 객체 생성
+	
+	//new Date(); // 현재 시스템의 시간정보 + 날짜정보
+	var t = new Date();
+	
+	document.write(t+"<br>");
+	
+	document.write(t.getFullYear()+"년");
+	document.write((t.getMonth()+1)+"월"); // 월 0~11
+	//document.write(t.getDay()+"일"); //요일(일 : 0 ~ 토 : 6)
+	document.write(t.getDate()+"일");
+	document.write(t.getHours()+"시");
+	document.write(t.getMinutes()+"분");
+	document.write(t.getSeconds()+"초<hr>");
+	
+	var d1 = new Date(2021,3,11); // 년, 월-1, 일	
+	document.write(d1+"<hr>");
+	//document.write(dl.getMonth());
+	var d2 = new Date("2021/3/11"); // 년, 월, 일
+	document.write(d2+"<hr>");
+	var d3 = new Date(2021,2,11,11,00,00); // 년, 월-1, 일, 시, 분, 초
+	document.write(d3+"<hr>");
+	
+	
+	// 2002년 월드컵 -> 개막일의 요일(2002/5/31)
+	
+	var worldcup = new Date("2002/5/31");
+	day = worldcup.getDay();
+	
+	// => 요일을 계산하는 함수를 생성
+	
+	
+	function myDay(day){
+		var result ="";
+	switch(day){
+	case 0:
+		result = "일";
+		break;
+	case 1:
+		result = "월";
+		break;
+	case 2:
+		result = "화";
+		break;
+	case 3:
+		result = "수";
+		break;
+	case 4:
+		result = "목";
+		break;
+	case 5:
+		result = "금";
+		break;
+	case 6:
+		result = "토";
+		break;
+	}
+	return result;
+}
+	
+	document.write("월드컵 개최일의 요일은 : "+myDay(worldcup.getDay())+"요일입니다.");
+	
+	document.write("<hr>");
+	//	2021/3/11 (목) 11:38:00초 (현재 시간정보 사용)
+	
+	var tmp = new Date();
+	document.write(tmp.getFullYear()+"/");
+	document.write((tmp.getMonth()+1)+"/");
+	document.write(tmp.getDate()+"("+myDay(tmp.getDay())+")");
+	document.write(" "+tmp.getHours()+":"+tmp.getMinutes()+":"+tmp.getSeconds());
+	
+	document.write("<hr>");
+	
+	// D - day
+	// 남은 일수 = 특정 날짜 객체 - 현재 날짜 객체
+	
+	var  today = new Date();
+	var d_day = new Date("2021/12/31");
+	
+	document.write(d_day - today); // 밀리세컨드
+	
+	document.write("<hr>");
+	// 1초 = 1000(msc)
+	// 1분 = 60000(msc)
+	// 1시간 = 3600000(msc)
+	// 1일 = 24 * 3600000(msc)
+	
+	// D-day 계산하는 함수 생성
+	
+	function  dday(t,d){
+		
+		var result = Math.ceil((d - t)/(24*3600000));
+		 
+		document.write("D -"+result+"일");
+		
+	}
+	
+	dday(today,d_day);
+	document.write("<hr>");
+	
+	// 수학(Math)객체 - 속성, 기능
+	// => 객체 생성없이 바로 사용가능
+	// => 객체명.변수 / 객체명.메서드
+	
+	// * 상수 : 변수에 값을 담아놓은 상태로 사용(한번 설정시 값변경 x)
+	//  => 상수의 이름을 작성시 대문자로만 작성
+	document.write(Math.PI+"<hr>");
+	document.write(Math.max(10,20));
+	document.write("<hr>")
+	document.write(Math.abs(-100));
+	document.write("<hr>")
+	
+	document.write(Math.floor(Math.random()*10+1));
+	document.write("<hr>")
+	
+	
+	
+</script>
+</head>
+<body>
+<h1>WebContent/js2/test3.html</h1>
+</body>
+</html>

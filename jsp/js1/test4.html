@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+	// 연산자
+	// 1. 산술연산자 ( + - * / %)
+	
+	// 숫자 데이터 저장하는 변수 2개 생성 (100,200)
+	// => 해당결과 저장하는 변수 result 생성후 화면에 출력
+	var num1 = 100, num2 = 200;
+	var result = num1 + num2;
+	document.write("+ : "+result+"<br>");
+	
+	result = num1 - num2;
+	document.write("- : "+result+"<br>");
+	
+	result = num1 * num2;
+	document.write("* : "+result+"<br>");
+	
+	result = num1 / num2;	
+	document.write("/ : "+result+"<br>");
+	
+	//나머지를 계산하는 연산자
+	result = num1 % num2;	
+	document.write("% : "+result+"<br>");
+	
+	// 과일이 100개 있다. 이 때 5개씩 포장가능한 박스로 포장하려한다.
+	// 이 때 필요한 상자의 개수는?
+	var fruit = 100, sizeOfBox = 5
+	var box = fruit / sizeOfBox;
+	document.write(box+"<br>");
+	
+	// 738 -> 연산 -> 700
+	// 123 -> 연산 -> 100
+	// 654 -> 연산 -> 600
+	// 모든 3자리수에서도 동일한 조건을 가진다.
+	var data = 738;
+	// data / 100;
+	// Math.floor(data / 100) * 100;
+	document.write((Math.floor(data / 100) * 100)+"<br>");
+	
+	
+	// 777 -> 연산 -> 771
+	var data1 = 777;
+	document.write((Math.floor(data1/ 10)*10+1)+"<br>");
+	
+	
+	// 2. 대입연산자 ( = ), 복합대입연산자 (+=, -=, *=, /=, %=)
+	// 변수 = 값; (오른쪽의 값을 왼쪽의 변수에 저장)
+	// A += B; <=> A = A + B; 누적합
+	
+	num1 = 10;
+	num2 = 20;
+	//document.write(num1 += num2);
+	document.write(num1 = num1 + num2);
+	
+	// 누적합을 사용하여 화면에 출력하기(테이블)
+	
+	var t = "<table border ='1'>";
+	
+	t += "<tr>";
+	t += "<td>"+num1+"</td>"
+	t += "<td>"+num2+"</td>"
+	t += "<td>"+(num1+num2)+"</td>"
+	t += "</tr>";
+	t += "</table>";
+	
+	document.write(t);
+	
+	// 3. 비교연산자 ( >, <, >=, <=, ==, !=, ===, !==)
+	// => 결과의 형태는 boolean
+	
+	document.write(num1 > num2);
+	
+	// A == B : A와 B가 같은가?
+	// A != B : A와 B가 다른가?	
+		document.write("<br>");
+			
+	var data1 = 10;
+	var data2 = "10";
+	
+	// (== !=) 데이터의 타입 상관없이 값만 비교해서 결과를 리턴
+	document.write(data1 == data2);
+		document.write("<br>");
+	// (=== !==) 데이터의 타입과 값을 모두 비교하여 결과를 리턴
+	document.write(data1 === data2);
+		document.write("<br>");
+		
+	// 4. 증감연산자(단항연산자)
+	//  ++A  A++ --A A--
+	var A = 100;
+	document.write("<br>");
+	document.write(A+"<br>");
+	++A; //A의 값을 사용하기 전에  1증가 후 사용
+	document.write(A+"<br>");
+	A++; //A의 값을 사용하고 나서 1증가
+	document.write(A+"<br>");
+	A++;
+	++A;
+	document.write(A+"<br>");
+	
+	// 5. 논리연산자 ( &&-AND연산, ||-OR연산, != -NOT연산 )
+	// AND : 두개의 조건을 모두만족하는 경우
+	// OR : 두개의 조건중 둘중에 하나이상 만족하는 경우
+	
+	// 논리표
+	// A		B		A && B		A || B		
+	// T		T		  T			  T
+	// T		F		  F			  T
+	// F		T		  F			  T
+	// F		F		  F			  F
+	
+	// A		!A
+	// T		 F
+	// F		 T
+	
+	var T = true;
+	var F = false;
+	
+	document.write(T&&T+"<br>");
+	document.write(T&&F+"<br>");
+	document.write(F&&T+"<br>");
+	document.write(F&&F+"<br>");
+	
+	document.write(T||F+"<br>");
+	document.write(T||T+"<br>");
+	document.write(F||T+"<br>");
+	document.write(F||F+"<br>");
+	
+
+	// 6. 삼항연산자
+	
+	// 조건문? 값(참일때 실행) : 값(거짓일때 실행)
+			
+	// 나이가 20살 이상인경우 "성인입니다!" 아닌경우 "미성년자입니다!"
+	var age = 33;
+	document.write((age>20)? "성인입니다!" : "미성년자입니다!");
+			document.write("<br>");
+	// 과일상자 계산하기
+	// 과일 : 237개, 상자의 크기 : 5
+	// => 이때 필요한 상자의 개수
+	var fruit = 237, sizeOfBox =5;
+	document.write((fruit%sizeOfBox==0)? Math.floor(fruit/sizeOfBox) : Math.floor((fruit/sizeOfBox+1)));
+
+	
+	
+	
+	
+	
+
+</script>
+
+
+</head>
+<body>
+	<h1>WebContent/js1/test4.html</h1>
+	
+	<table border="1">
+	
+	<tr>
+	<td>num1</td>
+	<td>num2</td>
+	<td>num1+num2</td>
+	</tr>
+	</table>
+	
+	
+	
+	
+	
+</body>
+</html>

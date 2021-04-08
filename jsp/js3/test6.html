@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+ <script type="text/javascript">
+
+	// 이미지 -> document에서 이미지의 정보를 배열로 저장
+	
+	// window - document - 이미지
+	// => window.document.img태그의 이름(name).속성
+	// => window.document.images[0].속성
+	
+	// * 위 2가지 방식으로 사용가능
+
+	// 이미지 - 속성 : name, src(파일주소), border(테두리)
+	//			  width(가로), height(세로)
+	// 		- 기능
+	
+	function func1(){
+		
+		//alert(window.document.images[0].src);
+		alert("src : "+window.document.img1.src);
+		alert("name : "+window.document.images[0].name);
+		alert("border : "+document.img1.border);
+		alert("width : "+document.img1.width);
+		alert("height : "+document.img1.height);
+		
+	}
+	
+	function func2(){
+		document.img2.src="1.jpg";
+		document.img2.width=200;
+		document.img2.height=200;
+		document.img2.border=3;
+		
+	}
+	
+	function func3(){
+		
+		document.img3.src="2.jpg";
+		
+	}
+	
+	function func4(){
+		
+		document.img3.src="3.jpg";
+		
+	}
+	
+	var upDown = true;
+	function func5(var n){
+		// func3,4 번의 기능을 한번에 처리
+		if (upDown){
+			document.img3.src="3.jpg";
+		}else{
+			document.img3.src="1.jpg";
+		}
+		upDown = !upDown;
+		
+	}
+	
+	
+	
+	
+ </script>
+</head>
+<body>
+<h1>WebContent/js3/test6.html</h1>
+
+<img src= "1.jpg" width="150" height="150" name="img1">
+
+<input type="button" value="이미지 정보 확인" onclick="func1()">
+<hr>
+
+<h3> 이미지 객체의 속성을 변경</h3>
+<p> 버튼 클릭이벤트 발생/
+이미지를 변경 (1->2), 크기 변경(200 x 200), 테두리 3 </p>
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3FO5-WVHO2E7dlJyAHFPAGtjMINvX3-5czQ&usqp=CAU" width="150" heigth="150" name="img2">
+
+<input type="button" value="속성변경" onclick="func2()">
+
+<h3> 이미지 태그에 마우스 올렸을때 이미지 변경,
+			" 		내렸을때 원래 이미지로 변경
+</h3>
+
+<hr>
+
+<img src="1.jpg" width="150" height="150" name="img3" 
+	onmouseover="func3()" onmouseout="func4()">
+
+<hr>
+<img src="3.jpg" width="150" height="150" name="img4" 
+	onmouseover="func5(1)" onmouseout="func5(3)"> 
+
+
+
+</body>
+</html>

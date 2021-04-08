@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	// 반복문 : 코드를 반복하기위해서 사용하는 문장
+	// for, while, do-while
+	
+/*  	for(초기식;조건식;증감식){
+		반복할 실행문;
+	}
+	 */
+	 
+	 // "안녕하세요 ! " 5번 출력
+	 
+	/*  document.write("안녕하세요! <br>");
+	 document.write("안녕하세요! <br>");
+	 document.write("안녕하세요! <br>");
+	 document.write("안녕하세요! <br>");
+	 document.write("안녕하세요! <br>");
+	  */
+	 // for 사용
+	 for (var  i = 1; i <= 5; i++) {
+	 document.write("안녕하세요! <br>");	
+	}
+	  
+	  document.write("<hr>");
+	  
+	  //1~10 숫자를 가로 출력
+	  for(var num = 1; num <= 10; num++){
+		  document.write(num+ " ");
+	  }
+	  
+	  document.write("<hr>");
+	  
+	  //11~25 숫자를 가로출력
+	  for(var num = 11; num <= 25; num++){
+		  document.write(num+" ");
+	  }
+	  
+	  document.write("<hr>");
+	  
+	  // 1~10까지 숫자 중에서 홀수만 출력
+	  for(var num = 1; num <= 10; num+=2){
+		 
+		  document.write(num+ " ");
+		  //num++;
+	  }
+	  document.write("<hr>");
+		
+	  // 1~10까지 숫자 중에서 짝수만 출력
+	  for(var num = 1; num <= 10; num++){
+		  num++;
+		  document.write(num+ " ");
+	  }
+	  document.write("<hr>");
+	  
+	  // 1~10까지 숫자 역순으로 출력
+	  for(var num = 10; num >=1; num--){
+		  
+		  document.write(num+" ");
+	  }
+	  
+	  document.write("<hr>");
+	  
+	  
+	  // 구구단  출력
+	  var dan = 5;
+	  document.write("["+dan+"단] <br>")
+	  for(var num = 1; num <= 9; num++){
+		  
+		  document.write(dan +" * "+num+" = "+dan*num+"<br>");
+	  }
+	  
+	  document.write("<hr>");
+	  
+	  // 누적합
+	  // 1~10까지의 숫자의 합 출력
+	  var sum = 0;
+	  for(var num = 1; num <= 10; num++){
+		  sum= sum + num; 
+	//	  document.write("num =" +num+", sum = "+ sum+"<br>");
+	  }
+	  
+	  document.write("sum = " +sum+ "<br>");
+	  
+	  // while 반복문
+	  
+/* 	  
+		초기식;
+	  while(조건식){
+		  반복실행문;
+		  증감식;
+	  }
+	  
+	   */
+	  
+	   // 1~10까지 숫자 출력
+	   i = 1;
+	   while(i <=10){
+		   document.write(i+" ");
+		   i++;
+		   
+	   }
+	   
+	   document.write("<br>")
+	   
+	   // while문 사용 1~100까지 숫자의 합을 출력
+	   sum = 0;
+	   i = 1;
+	   while(i <= 100){
+		   sum = i + sum;
+		   i++;
+	   }
+		document.write("sum = " +sum);
+	   
+	   
+	   document.write("<br>")
+	   
+	   // do-while 반복문 - 무조건 한번은 실행하고 조건이 맞는지 비교
+	/*       
+		초기식;
+	   do{
+		  반복할코드;
+		  증감식;
+	   }while(조건식);
+	    */
+	    
+	    var i = 1;
+	    do{
+	    	document.write(i+" ");
+	    	i++;
+	    }while(i<=10);
+	    
+	   document.write("<br>")
+	    
+	   for(var i = 0; i < 5; i++);
+	   {
+		   document.write(i);
+	   }
+	    
+	    
+	   // 무한반복문 (무한 루프)
+	   
+	   for(;;){
+		   document.write("무한 루프!");
+	   }
+	   
+	    
+	    
+	    
+	   
+
+</script>
+</head>
+<body>
+
+<h1>WebContent/js1/test7.html</h1>
+
+</body>
+</html>

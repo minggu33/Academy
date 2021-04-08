@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+
+	function hello(){
+		document.write("안녕");
+		document.write("Hello");
+		
+	}
+
+	hello();
+	document.write("<hr>");
+	
+	function myName(name){
+		document.write(name+"입니다.");
+		
+	}
+
+	myName("강민구");
+	
+	document.write("<hr>");
+	
+	
+	function returnT(){
+		
+		return 150;
+		document.write("바봅");
+		
+	}
+	
+	document.write(returnT());
+	document.write("<hr>");
+	
+	///////////////////////////////////
+	
+	
+	var pm = Math.floor(Math.random()*10);
+	if(pm<6){
+		pm = -1;
+	}else{
+		pm = 1;
+	}
+	
+	var num = pm*(Math.floor(Math.random()*20+1));
+	
+	
+	document.write(num);
+	document.write("<br>");
+	
+	function myABS(num){
+		if(num < 0){
+		 num = - num;
+			
+		}
+			return num;
+		
+	}
+	
+	document.write(myABS(num));
+	
+	
+	var tmp = new Date();
+	document.write(tmp.getFullYear()+"/");
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+</script>
+
+
+</head>
+<body>
+<h1>TESTEST</h1>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// 함수(function) <-> 메서드
+	// 데이터를 저장 -> 변수
+	// 실행문을 저장(동작을 모아서 처리) -> 함수
+	
+// 	// 함수 선언
+// 	function 함수명(){
+// 		실행코드;
+// 	}
+	
+// 	// 함수 사용
+// 	함수명();
+
+	// "안녕" " 아이티윌" 출력하는 구문이 각각 있을 때,
+	// => 이 두개의 동작을 한번에 처리하는 함수 생성
+	function hello(){
+		document.write("안녕");
+		document.write("아이티윌");
+	}
+
+	hello();
+	document.write("<br>");
+	
+// 	// 익명함수 선언
+// 	var fun = function(){
+		
+// 	}
+// 	// 익명함수 사용
+// 	fun();
+
+	// showMyInfo 함수 생성 -> 함수 실행시 마다
+	// " 이름 " " 나이 " " 사는 곳 "
+	
+	var showMyInfo = function(){
+		document.write("강민구"+" ");
+		document.write("33"+" ");
+		document.write("부산진구"+" ");
+	}
+
+	showMyInfo();
+	
+	document.write("<br>")
+	// 매개변수의 6개까지 사용 권장
+// 	function 함수명(매개변수1,.....){
+// 		실행코드(매개변수 사용);
+// 	}
+
+// 	// 사용(호출)
+// 	함수명(매개변수1,....);
+	
+	
+	//myName() 함수 생성 -> 1개의 매개변수(전달인자) - 이름
+	//-> 전달받은 이름으로 정보를 출력
+	// * 매개변수명은 의미를 가지고 있는 것이 좋음
+	function myName(name){
+		document.write("이름 : "+ name);
+	}
+	
+	myName("홍길동");
+	document.write("<br>")
+	// 숫자 2개를 입력받는 함수 => 전달받은 두 수의 합을 출력
+	
+	function plusNumber(i,j){
+		document.write(i+" + "+j+" = "+(i+j));
+	}
+	
+	plusNumber(3,4);
+	document.write("<br>")
+
+	// 함수의 결과를 리턴
+// 	function 함수명(){
+// 		return 값;
+// 	}
+	
+	//var 변수 = 함수명();
+	
+	
+	function returnTest(){
+		return 100;
+	}
+	
+	returnTest();
+	
+	document.write(returnTest());
+	document.write("<br>")
+	
+	var test = returnTest();
+	document.write(test);
+	document.write("<br>")
+	
+	
+	// * 함수(function) 실행목적
+	// - 함수 선언 후 호출시 포함되어 있는 모든코드를 실행
+	// - 리턴값이 있을경우 값을 리턴하고 종료
+	//	 return 값;	(값을 리턴)
+	//	 return;	(그냥 종료)
+	
+	function fun1(){
+		document.write("1");
+		document.write("2");		
+		return 100;
+		document.write("3");
+		document.write("4");
+		return;
+		document.write("5");
+	}
+	
+	fun1();
+	document.write("<br>")
+	
+	// myABS()함수, 1개 매개변수 사용
+	// 정수를 입력받아서 절대값을 리턴하는 함수
+	
+// 	function myABS(num1){
+// 		if(num1<0){
+// 			num1 = -num1;
+// 			return num1;
+// 		}else{
+// 			return num1;
+// 		}
+// 	}
+	
+// 	document.write(myABS(-4));
+	
+	
+// 	function myABS(num1){
+// 		if(num1<0){			
+// 				num1 = -num1;
+// 	}
+// 		return num1;
+// 	}
+	
+	// 삼항연산자 사용 리턴
+	function myABS(num1){
+		return ((num1<0)? -num1:num1);
+	}
+	
+	document.write(myABS(-4));
+	document.write("<br>")
+	document.write(myABS(85));
+	document.write("<br>")
+
+	// mySum(a)
+	// -> 1~a 까지의 합을 출력하는 함수
+	
+	
+	function mySum(a){
+		var sum = 0;
+		for(var i = 1;i <= a;i++){			
+			
+			sum += i;			
+		}
+		document.write("총합 : "+sum);
+		
+	}
+	mySum(100);
+	
+	document.write("<br>")
+	
+	
+	// myCal(), 매개변수 3개, (숫자,문자,숫자)
+	// -> 연산의 결과를 리턴
+	// ex) (3 " + ", 3) => 6리턴
+	// 문자 - 산술연산자 (+,-,*,/,%), 그외 문자 : "에러발생!"
+	
+	// 함수의 결과를 저장해서 출력 "연산의 결과 : 00"
+	
+	function myCal(a,b,c){
+		var result = 0;
+		switch(b){
+		case "+":
+			result = a+c;
+			break;
+		case "-":
+			result = a-c;
+			break;
+		case "*":
+			result = a*c;
+			break;
+		case "/":
+			result = a/c;
+			break;
+		case "%":
+			result = a%c;
+			break;
+		default:
+			result = "에러발생!"
+			break;		
+		}		
+		return result;	
+	}
+	document.write("연산의 결과 : "+ myCal(1,"+",3)+"<br>");
+	document.write("연산의 결과 : "+ myCal(1,"-",3)+"<br>");
+	document.write("연산의 결과 : "+ myCal(1,"*",3)+"<br>");
+	document.write("연산의 결과 : "+ myCal(1,"%",3)+"<br>");
+	document.write("연산의 결과 : "+ myCal(1,"/",3)+"<br>");
+	document.write("연산의 결과 : "+ myCal(1,"@",3)+"<br>");
+	
+	// 내장함수 : 자바스크립트에 내장되어 있는 함수
+	// => 함수의 선언없이 바로 사용가능
+	// 	document.write();
+	// 	alert();
+	// 	confirm();
+	//	String();, Boolean();, Number();
+	
+	var num = 0;
+	// 재귀함수: 함수안에서 자신을 다시 호출하는 함수
+	function myLoop(){
+		
+		num++;
+		document.write("num : "+num+"<br>");
+		if(num == 5){
+			// break; (사용x)
+			return;
+		}
+		myLoop();
+	}
+// 	for(var i = 1; i <= 5;i++){		
+// 		myLoop();
+// 	}
+	myLoop();
+	
+	// 전역변수 : 코드 전역에서 사용가능한 변수 (공통의 값을 사용)
+	var val = 200;
+	
+	function valueFun(){
+		// 지역변수 : 특정 지역에서만 사용가능한 변수(특정 값을 사용)
+		// 			-함수 호출시 생성 -> 함수 종료시 삭제
+		var val = 300;
+	}
+
+	valueFun();
+	document.write(val);
+
+
+</script>
+</head>
+<body>
+	<h1>WebContent/js2/test1.html</h1>
+</body>
+</html>

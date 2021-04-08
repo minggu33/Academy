@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	//Q. 변수의 값보다 크면서 가장 가까운 10의 배수를 찾아서
+	//  기존변수의 값을 뺀 값을 출력
+	
+	// 56 -> 60 : 60 - 56 = 4	
+	
+	var num = Math.floor((Math.random()*100)+1);
+	
+	document.write(num);
+	document.write("<br>");
+	var num1 =10-(num%10) ;
+	document.write("연산의 결과 : "+num1 +"<br>");
+	
+	document.write("<hr>");
+	
+	//Q. 두 개의 주사위 던졌을때, 눈의 합이 6이 되는 경우의 수 모두 출력
+	num3 = 0;
+	for(var i =1; i<=6;i++){
+		for(var j = 1; j <=6; j++){
+			if(i+j==6){
+				document.write(i+" , "+j+"<br>");
+				++num3;
+			}
+		}
+	}
+			document.write("총 : "+ num3+"개" );
+			
+			
+			document.write("<hr>");
+			
+	//Q. 방정식 2x + 4y = 10
+	// 		(x,y 는 정수) 0<=x<=10, 0<=y<=10
+	for(var x = 0; x<= 10; x++){
+		for(var y = 0; y <= 10; y++){
+			if(((x*2)+(4*y))==10){
+				document.write("x = "+x+", y = "+y+"<br>");
+			}
+		}
+	}
+			document.write("<hr>");
+			
+			
+			
+			
+	//Q. 1~20 까지의 숫자중에서 2의 배수가 아닌숫자, 3의 배수도 아닌 숫자의 합을 출력
+	
+	
+	var cnt = 0;
+	for(var x = 1; x <= 20; x++){
+			if(x%2 != 0){
+				if(x%3 != 0){
+					document.write(x+"<br>")
+					cnt+=x;
+				}
+			}
+		
+	}
+	document.write("총 합은 : "+cnt);
+	
+	document.write("<hr>");
+	
+	
+	
+	
+	//Q. 1 + (1 + 2)+ (1+2+3)+(1+2+3+4)+....+(1+2+3+..+10)
+	var sum2 = 0;
+	var sum1 = 0;
+	for(var num = 1; num <= 10; num++){
+		sum1 += num;
+		sum2 += sum1;
+		
+	}
+	
+	
+	document.write(sum2);
+	
+	document.write("<hr>");
+	
+	
+	
+	
+	//Q. 1 +(-2)+3+(-4)+(5)+....숫자의 연산이 계속될때 연산의 총합이 100이 되는 시점
+	var sum = 0;
+	
+	for(var i=1; true; i++){
+		
+		if(i%2==0){
+		sum += -i;
+		}else{
+		sum += i;
+		}
+		if(sum>=100){
+			break;
+	}
+	
+	}
+	document.write(" sum : "+ sum +", i : "+i+"<br>");
+	
+	///////////////////////////////////////////////////
+	
+		
+	var sum = 0;
+	var num = 0;
+	var s = 1; // 값의 부호(+,-)
+	
+	for(i = 1; true; i++,s=-s){
+		
+		num = i * s;//
+		sum += num;
+		
+		if(sum>=100){
+			break;
+		}
+		
+	}
+	document.write(" sum : "+ sum +", num : "+num+"<br>");
+	
+	///////////////////////////////////////////////////
+	
+		for(i = 1; sum < 100; i++,s=-s){
+		
+		num = i * s;//
+		sum += num;
+		
+	}
+	document.write(" sum : "+ sum +", num : "+num+"<br>");
+	
+	
+	
+	
+	//Q. 구구단 가로출력
+/* 	[2단]			[3단]		
+	2*1 = 2			3*1 = 3
+	2*2 = 4			3*2 = 6
+	
+	 */
+	
+	 for(i=0;i<10;i++){
+		 
+		 for(j=2;j<10;j++){
+			 
+			 if(i==0){
+				 document.write(" ["+j+"단] ")
+			 }else{
+			 
+			 document.write(j+" X "+i+" = "+(i*j)+" ");
+			 }
+		 }
+		 	document.write("<br>");
+	 }
+	 
+	 
+	 
+	 
+
+
+</script>
+</head>
+<body>
+
+<h1>WebContent/js1/test9.html</h1>
+
+
+</body>
+</html>
