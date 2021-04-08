@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>a태그로 link걸기</title>
+</head>
+<body>
+<h1>a태그로 link걸기</h1>
+
+<p>
+&lt;a href="url(이동할 곳의 주소)"&gt;...&lt;/a&gt;<br>
+a태그에 href속성으로 주소(경로)를 지정한다.<br>
+링크가 걸린 텍스트는 밑줄이 나타나고 <br>
+마우스 오버시 커서의 모양이 바뀌고<br>
+색상은 3가지 형태 중 하나로 나타남<br>
+▶초기링크색 - 파랑<br>
+▶방문한 링크색 - 보라<br>
+▶활성화시 링크색 - 빨강 
+</p>
+
+<h2> link경로 지정 </h2>
+<ol>
+	<li> 상대경로 - html문서의 위치에 따라 달라지는 경로 </li>
+	<li> 절대경로 - 항상 같은 경로 </li>
+</ol>
+
+<h3> 상대경로로 link걸기</h3>
+<a href="form-test_강민구.html">form-test</a>
+<a href="img.html">이미지 수업</a><br>
+
+<h3> 절대경로로 link걸기</h3>
+<a href="https://www.w3schools.com">w3schools.com</a><br>
+<h2> 속성으로 링크여는 방식 지정하기 </h2>
+<a href="https://www.daum.net" target="_blank">daum(새탭에서 열기)</a>
+
+<h3>target 속성값</h3>
+<ul>
+	<li>target="_self"현재 위치에 열기</li>
+	<li><b>target="_blank"새 탭에서 열기</b></li>
+	<li>target="_parent"한 단계 상위창에 열기</li>
+	<li>target="_top"(프레임으로 나뉨없이)전체 창에 열기</li>
+</ul>
+
+
+
+<a href="https://www.naver.com" target="_blank">네이놈</a>을 새 탭에서 열기
+
+<h2> 링크로 보여줄 수 있는 종류 </h2>
+
+<ol>
+	<li>외부사이트(url)<br>
+					<a href="https://pixabay.com" target="_blank">pixabay(이미지 무료1)</a>
+					<a href="https://pexels.com/ko-kr/" target="_blank">pexels(이미지 무료2)</a></li>
+	<li>웹페이지(*.htm or *.html)<br>
+	<a href="https://comic.naver.com/webtoon/weekday.nhn">네이버웹툰보기</a>
+	</li>
+	<li>이미지파일(*.jpg, *.gif, *.png)<br>
+	<a href="yellowup.gif">yellowup.gif</a>
+	</li>
+	<li>동영상파일(*.png, *.mp4, *.webm)</li>
+	<li>텍스트파일(*.txt)</li>
+</ol>
+
+<h2> 링크로 보여줄 수 없는 종류 - 브라우저가 처리 불가한 파일(종류)인 경우 다운로드 됨</h2>
+<a href="img.zip">img.zip</a>
+
+<hr>
+<h2> 이미지에 링크 걸기(링크 걸린 이미지)</h2>
+<p>
+ - 이미지(로고) 클릭시 해당사이트 보여주기 <br>
+<a href="https://www.daum.net"><img alt="daum" src="img/png/daum-logo.png" title="daum으로 이동"></a>
+
+<br>
+<a href="http://itwillbs.co.kr" target="_blank"><img alt="itwill" src="img/png/itwill_logo.png" title="itwill로 이동"></a>
+<br><br>
+- 이미지(썸네일) 클릭시 이미지 크게 보여주기<br>
+<a href="img/header.jpg" target="_blank">
+<img alt="cafe" src="img/header.jpg" width="200"></a>
+<br><br>
+
+-이미지 (영상의 캡쳐본) 클릭시 동여상 보여주기<br>
+<a href="img/trees.mp4" title="숲속힐링영상보기" target="_blank">
+<img alt="숲속이미지" src="img/bastei.jpg" width="150"></a>
+
+
+<hr>
+<h2> email 링크 걸기</h2>
+&lt;a href="mailto:메일주소"&gt;...&lt;/a&gt; <br>
+<a href="mailto:class@itwill.co.kr">class@itwill.co.kr</a>
+
+<a href="mailto:kkoo89@naver.com"><img alt="mail" src="img/mail02.jpg" width="150"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
