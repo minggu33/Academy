@@ -1,0 +1,14 @@
+DDL 구문 => auto commit을 내포하고 있다. 별도의 commit작업 없이 작성후 엔터만으로 commit이 됨.
+
+<Table>
+-사용방법 : select, insert, update, delete
+-정의방법 : create table, alter table,
+          drop table, truncate table
+
+<View>
+-사용방법 : select, insert, update, delete
+-정의방법 : create [or replace] view, drop view
+
+<Sequence>
+-사용방법 : 시퀀스명.nextval, 시퀀스명.currval
+-정의방법 : create sequence, alter sequence
