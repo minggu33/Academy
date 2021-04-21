@@ -22,7 +22,7 @@ class Clock{
 	// 작업 시작 시간을 startTime변수에 초기화할 메소드
 	public void clockStart() {
 		// 작업시작시간(컴퓨터의 현재 시간으로 구해서 저장)
-		startTime = System.currentTimeMillis();
+		startTime = System.nanoTime();
 				
 	}
 	
