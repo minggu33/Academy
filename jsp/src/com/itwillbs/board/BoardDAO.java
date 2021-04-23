@@ -384,6 +384,87 @@ public class BoardDAO {
 		
 	}//getBoardList(startRow,pageSize)
 	
+	//updateReadcount(num)
+	public void updateReadcount(int num){
+		
+		try {
+			// 1,2 디비연결
+			conn = getConnection();
+			
+			
+			// 3 sql구문 작성(update) & pstmt 객체
+			sql = "update itwill_board set readcount=readcount+1 where num=?";
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			//?
+			pstmt.setInt(1, num);
+			
+			// 4 sql 실행
+			pstmt.executeUpdate();
+					
+			System.out.println(" 글 조회수 증가 완료! ");
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}finally{
+			
+			closeDB();
+			
+		}		
+		
+	}//updateReadcount(num)
 	
+	// getBoard(num)
+	public BoardBean getBoard(int num){
+		BoardBean bb = null;
+		
+		try {
+			// 1,2 디비연결
+			conn = getConnection();
+			
+			// 3 sql 작성(select) & pstmt 객체
+			sql = "select * from itwill_board where num=?";
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, num);
+			
+			// 4 sql 실행
+			rs = pstmt.executeQuery();
+			
+			// 5 데이터 처리(bean 저장)
+			if(rs.next()){
+				// 데이터 있을때 db 객체 생성
+				bb = new BoardBean();
+				
+				// DB정보 -> Bean에 저장
+				bb.setContent(rs.getString("content"));
+				bb.setDate(rs.getTimestamp("date"));
+				bb.setFile(rs.getString("file"));
+				bb.setIp(rs.getString("ip"));
+				bb.setName(rs.getString("name"));
+				bb.setNum(rs.getInt("num"));
+				bb.setPass(rs.getString("pass"));
+				bb.setRe_lev(rs.getInt("re_lev"));
+				bb.setRe_ref(rs.getInt("re_ref"));
+				bb.setRe_seq(rs.getInt("re_seq"));
+				bb.setReadcount(rs.getInt("readcount"));
+				bb.setSubject(rs.getString("subject"));
+								
+			}
+			
+			System.out.println(" 글 번호에 해당하는 글 정보 저장완료! ");
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}finally{
+			closeDB();
+		}
+				
+		return bb;
+	}// getBoard(num)
 	
 }
