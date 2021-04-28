@@ -467,4 +467,117 @@ public class BoardDAO {
 		return bb;
 	}// getBoard(num)
 	
+	// updateBoard(bb)
+	public int updateBoard(BoardBean bb){
+		int check = -1;
+		
+			
+			try {
+				
+				// 1,2 디비연결
+				conn = getConnection();
+				// 3 sql 작성 & pstmt 객체 (select - 본인확인) & pstmt 객체
+				sql = "select pass from itwill_board where num=?";
+				pstmt = conn.prepareStatement(sql);
+				
+				pstmt.setInt(1, bb.getNum());
+				// 4 sql 실행
+				rs = pstmt.executeQuery();
+				
+				// 5 데이터 처리
+				if(rs.next()){
+							// 글이 있음
+						if(bb.getPass().equals(rs.getString("pass"))){
+								
+								// 글 수정시 입력된 비밀번호, 글 작성시 입력된 비밀번호(DB)
+								// 본인 글 확인
+								// 3 sql (update - 글수정) & pstmt 객체							
+								sql = "update itwill_board set subject=?,content=? where num=?";
+								
+								pstmt = conn.prepareStatement(sql);
+								
+								pstmt.setString(1, bb.getSubject());
+								pstmt.setString(2, bb.getContent());
+								pstmt.setInt(3, bb.getNum());
+								
+								// 4 sql 실행
+								check = pstmt.executeUpdate();								
+								
+							
+								// check = 1;
+						}else{
+							// 잘못된 비밀번호 ( 글은 있음)
+							check = 0;
+						}
+				}else{
+					// 글이 없음
+					check = -1;
+					
+				}
+				System.out.println("글 수정 완료! "+ check);
+				
+			} catch (SQLException e) {
+				
+				e.printStackTrace();
+			}finally{
+				closeDB();
+			}
+			
+				
+		return check;
+	}// updateBoard(bb)
+	
+	// deleteBoard(bb)
+	public int deleteBoard(BoardBean bb){
+		int check = -1;
+		
+		try {
+			
+			conn = getConnection();
+			
+			sql = "select pass form itwill_board where num=?";
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, bb.getNum());
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()){
+					// 글이 있음
+				if(bb.getPass().equals(rs.getString("pass"))){
+					
+					// 일치
+					sql = "delete from itwill_board where num=?";					
+					pstmt = conn.prepareStatement(sql);
+					
+					pstmt.setInt(1, bb.getNum());
+					
+					check = pstmt.executeUpdate();
+					
+					
+				}else{
+					// 잘못된 비밀번호
+					check = 0;
+				}
+				
+				
+			}else{
+				// 글이 없음
+				check = -1;
+			}
+			
+			System.out.println("글 삭제 완료 !" + check);
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			closeDB();
+		}
+		
+		
+		return check;
+	}// deleteBoard(bb)
+	
 }

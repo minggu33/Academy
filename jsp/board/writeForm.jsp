@@ -12,7 +12,7 @@
 	<h2> 게시판 글쓰기</h2>
 	
 	<fieldset>
-		<form action="writePro.jsp" metho="post">
+		<form action="writePro.jsp" method="post">
 		글쓴이 : <input type="text" name="name"> <br>
 		비밀번호 : <input type="password" name="pass"><br>
 		제목 : <input type="text" name="subject"><br>
