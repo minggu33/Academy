@@ -26,7 +26,7 @@
 		// 게시판 페이징 처리 : DB에서 원하는 만큼만 글 가져오기
 		
 		// 한 페이지당 보여줄 글의 개수
-		int pageSize = 5;
+		int pageSize = 10;
 		
 		// 현재 페이지가 몇페이지 인지 확인
 		String pageNum = request.getParameter("pageNum");
@@ -61,7 +61,9 @@
 
 	<h2> ITWILL 게시판 글목록 [총 : <%=cnt%>개] </h2>
 	
+	
 		<h3><a href="writeForm.jsp">글쓰기</a></h3>
+		<h3><a href="fWriteForm.jsp">파일 글쓰기</a></h3>
 		
 	<table border="1">
 		<tr>
@@ -81,6 +83,17 @@
 			<td><%=bb.getNum() %></td>
 			<td>
 			
+			<% 
+			// 답글일때만 이미지 보여주기
+			int wid = 0;
+			if(bb.getRe_lev()>0){
+				wid = 10 * bb.getRe_lev();
+			%>
+				<img src="level.gif" height="15" width="<%=wid%>">
+				<img src="re.gif">
+			<% 
+			}			
+			%>
 			<a href="content.jsp?num=<%=bb.getNum()%>&pageNum=<%=pageNum%>"><%=bb.getSubject() %></a>
 			
 			</td>
