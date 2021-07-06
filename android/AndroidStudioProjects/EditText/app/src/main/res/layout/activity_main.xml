@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search"
+        android:inputType="text"
+        android:imeOptions="actionNext"
+        />
+    <!--
+           android:imeOpritons = "actionSend"   키보드에 전송 버튼 생성
+
+           android:imeOpritons = "actionSearch"   키보드에 검색 (돋보기) 모양의 버튼 생성
+
+           android:imeOpritons = "actionDone"   키보드에 '확인 체크' V 모양의 버튼 생성
+
+           android:imeOpritons = "actionGo"   키보드에 '이동'  ->  모양의 버튼 생성
+    -->
+
+
+
+
+</LinearLayout>

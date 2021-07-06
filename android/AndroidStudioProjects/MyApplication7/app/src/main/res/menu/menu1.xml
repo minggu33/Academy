@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        메뉴 항목을 1개 추가 했다.
+        id속성값은  java코드에서 접근할때 사용하며,
+        title속성값은 화면에 보이는 제목
+     -->
+    <item android:id="@+id/itemRed"
+          android:title="배경색(빨강)">
+    </item>
+    <item android:id="@+id/itemGreen"
+        android:title="배경색(초록)">
+    </item>
+    <item android:id="@+id/itemBlue"
+        android:title="배경색(파랑)">
+    </item>
+    <item android:title="버튼 변경 >>">
+        <menu>
+            <item android:id="@+id/subRotate"
+                  android:title="버튼 45도 회전">
+            </item>
+            <item android:id="@+id/subSize"
+                android:title="버튼 2배 확대">
+            </item>
+        </menu>
+    </item>
+</menu>

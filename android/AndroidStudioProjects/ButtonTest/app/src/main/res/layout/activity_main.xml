@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+   <RadioButton
+        android:id="@+id/R1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New RadioButton"
+       />
+    <CheckBox
+        android:id="@+id/C1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/R1"
+        android:text="CheckBox1"
+    />
+    <CheckBox
+        android:id="@+id/C2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/C1"
+        android:text="CheckBox2"
+        />
+    <CheckBox
+        android:id="@+id/C3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/C1"
+        android:layout_toRightOf="@id/C2"
+        android:text="CheckBox3"
+        />
+    <TextView
+        android:id="@+id/T1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="전원"
+        android:layout_below="@id/C2"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        />
+
+    <ToggleButton
+        android:id="@+id/Tog2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/T1"
+        android:layout_alignParentRight="true"
+      />
+
+    <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/T1"
+            android:layout_toLeftOf="@id/Tog2"
+        />
+</RelativeLayout>

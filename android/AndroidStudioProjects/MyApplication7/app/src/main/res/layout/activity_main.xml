@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    메뉴
+    - 사용자가 여러 개중 하나를 선택하도록 하여 사용자의 명령을 받아 들이는
+    간편한 방식으로 일반 PC용 프로그램에서도 널리 사용된다.
+
+    메뉴 종류
+    - 옵션메뉴
+    - 컨텍스트 메뉴
+
+    메뉴 XML파일을 작성 하는 형식
+
+    <menu>
+        <item
+            android:id="@+id/항목1아이디"
+            android:title="항목1 제목"
+        />
+       <item
+            android:id="@+id/항목2아이디"
+            android:title="항목2 제목"
+        />
+    </menu>
+
+    주제 : 배경색 변경 앱 만들기
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:id="@+id/baseLayout">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="오른쪽 위 메뉴 버튼을 누르세요"
+        android:textSize="20dp"
+        />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이건 버튼"
+        />
+
+
+</LinearLayout>

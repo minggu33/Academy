@@ -1,0 +1,5 @@
+<Controlfile의 다중화 목적>
+- Controlfile 손실 시 최신 시점으로 복구하기 위한 목적
+
+<Redologfile의 다중화 목적>
+- Database 작동을 멈추지 않고 계속 운영하기 위한 목적

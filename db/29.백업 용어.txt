@@ -1,0 +1,19 @@
+<백업 도구(Tool)>
+-User 관리 방식의 백업 : 운영체제 명령어를 사용한 백업(cp)
+-RMAN 방식의 백업 : RMAN 명령어를 사용한 백업
+
+<백업 모드>
+-Offline 백업(=cold bk) : DB가 꺼진 상태의 백업(shut, nomount, mount)
+-Online 백업(=hot bk) : DB가 켜진 상태의 백업(open)
+
+<백업 전략>
+-전체 DB 백업 : 모든 Datafile과 하나 이상의 Controlfile을 포함한 백업
+-부분 DB 백업 : 특정 Datafile만 또는 Controlfile만 백업
+
+<백업 유형>
+-Full 백업 : Datafile의 모든 block을 포함한 백업
+-Incremental 백업(증분 백업) : 마지막 백업 이후 변경된 block만을 포함한 백업
+
+<백업 파일 유형>
+-image copy : 복사본 형태의 백업 파일(원본 : 백업본 = 1 : 1)
+-backupset : 파일들의 모음(묶음) 형태의 백업 파일(원본 : 백업본 = N : 1)

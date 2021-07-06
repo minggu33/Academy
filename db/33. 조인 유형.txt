@@ -1,0 +1,38 @@
+	Natural		Using		On
+	join		join		join
+-------------------------------------------------
+컬럼명	  =		  =		상관없음
+데이터타입	  =		상관없음		상관없음
+문법	from employees naturl join jobs
+	(==)
+        from employees join jobs 
+        using (job_id)
+	(==)
+	from employees join jobs
+        on (employees.job_id = jobs.job_id)
+
+========================================================
+<equi join>		vs	<non-equi join>
+-조인 조건에 동등연산자(=)가	     -조인 조건에 동등연산자가 아닌
+ 사용된 조인 유형		      그 외 비교연산자가 사용된 조인 유형
+-Natural join		     -On절(=이 아닌 비교연산자) join
+-Using절 join
+-On절(=) join
+
+========================================================
+<inner join>		vs	<outer join>
+-내부조인				-외부조인
+-조인 조건을 만족하는 행만		-조인 조건을 만족하는 행과
+ 반환해주는 조인 유형		 조인 조건을 만족하지 않는 행까지
+-Natural join			 반환해주는 조인 유형
+-Using절 join			-left outer join
+-On절 join			-right outer join
+				-full outer join
+
+
+
+
+
+
+
+

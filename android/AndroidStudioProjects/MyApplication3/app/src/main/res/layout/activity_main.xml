@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    기타 위젯
+    AutoCompleteTextView(자동완성 텍스트뷰) 위젯
+    MultiAutoCompleteTextView(멀티 자동완성 텍스트뷰) 위젯
+
+    - 사용자가 단어의 일부만 입력해도  자동완성되는데,
+      자동완성 텍스트뷰는 단어 1개가 자동 완성 되고,
+      멀티자동완성 텍스트뷰는 쉼표,로 구분 하여 여러 개 단어가 자동완성 된다.
+      자동완성 단어는 주로 java코드에서 배열로 설정하며 setAdapter()메소드를 이용한다.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <!--
+        android:completionHint속성
+        목록에 힌트로 나타내는 속성
+
+        android:complationThreshold 속성
+        몇 글자를 입력 할때 목록을 보여줄것인지 지정 하는 속성
+    -->
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="자동완성텍스트뷰"
+        android:completionHint="선택하세요"
+        android:completionThreshold="2"
+        >
+    </AutoCompleteTextView>
+
+    <MultiAutoCompleteTextView
+        android:id="@+id/multiAutoCompleteTextView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:completionHint="선택하세요"
+        android:completionThreshold="2"
+        android:hint="멀티자동완성텍스트뷰"
+        />
+</LinearLayout>
+
+
+
+

@@ -1,0 +1,17 @@
+<Controlfile 손실 시 복구>
+[상황] Controlfile이 다중화되어 있음.
+      특정 Controlfile  하나가 손실된 경우.
+[복구 절차]
+1. DB 종료
+SQL> shut abort
+2. 손실된 Controlfile을 남아있는 Member를 사용해서 복구
+SQL> !
+$] cd /u01/app/oracle/oradata/ORCL/controlfile
+$] cp o1_mf_fwvn95xm_.ctl u01/app/oracle/fast_recovery_area/orcl
+                          /ORCL/controlfile/o1_mf_fwvn96cd_.ctl
+3. DB 시작
+SQL> startup => error(mount X) => 1번부터 다시 작업!
+
+4. open이 잘된 경우 복구 완성됨!
+SQL> select name
+     from v$controlfile;

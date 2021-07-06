@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    주제 : 날짜/시간 예약 앱 만들기
+
+    시간 및 날짜와 관련된 위젯을 이용하여 몇가지 기능을 하는 날짜/시간 예약 앱을 만들어보자
+
+    - 타이머기능 : <예약시작>과 <예약완료>버튼을 클릭하면 크로노미터가 타이머로 동작한다.
+
+    - 날짜/시간 설정 : <날짜설정>과 <시간설정>라디오버튼을 클릭하면
+                      예약한 날짜와 시간을 변경할 수 있다.
+
+    -<예약완료>버튼을 클릭하면 설정한 날짜와 시간이 결정 된다.
+    /////////////////////////////////////////////////////////////////////////
+
+    화면 디자인 및 편집 (LinearLayout안에 다음과 같이 화면을 구성한다)
+
+    - LinearLayout
+        1.Cronometer 1개와 Button 1개를 생성한다.
+        2.위젯의 id속성값은 chronometer1 , btnStart로 한다.
+
+    - RadioGroup
+        1.RadioButton 2개를 생성 한다.
+        2.라디오버튼 위젯의 id는 rdoCal, rdoTime으로 한다.
+
+    - LinearLayout
+        1. linearLayout의 layout_weight를  1로 설정한다.
+        2. FrameLayout을 두고 안에 CalendarView1개,  TimePicker 1개를 생성한다.
+        3. 위젯의  id속성값은  calendarView1 , timePicker1로 한다.
+
+    - LinearLayout
+        1. Button 1개와 TextView 10개를 생성한다.
+        2. 버튼의 id소겅값은 btnEnd로 ,
+          텍스트뷰는 홀수 차례에만 tvYear, tvMonth, tvHour, tvMinute로 한다.
+-->
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Chronometer
+            android:id="@+id/chronometer1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:format=" 예약에 걸린 시간  %s "
+            android:gravity="center"
+            android:textSize="20dp"
+            />
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="예약 시작"
+            />
+    </LinearLayout>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rdoCal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="날짜 설정 (캘린더뷰)"/>
+        <RadioButton
+            android:id="@+id/rdoTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="시간 설정"/>
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+            <CalendarView
+                android:id="@+id/calendarView1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:showWeekNumber="false"/>
+            <TimePicker
+                android:timePickerMode="spinner"
+                android:id="@+id/timePicker1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#CCCCCC">
+        
+        <Button
+            android:id="@+id/btnEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="예약완료"/>
+
+        <TextView
+            android:id="@+id/tvYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0000"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="년"/>
+        <TextView
+            android:id="@+id/tvMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="월"/>
+        <TextView
+            android:id="@+id/tvDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="일"/>
+        <TextView
+            android:id="@+id/tvHour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="시"/>
+        <TextView
+            android:id="@+id/tvMinute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="분 예약됨"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>

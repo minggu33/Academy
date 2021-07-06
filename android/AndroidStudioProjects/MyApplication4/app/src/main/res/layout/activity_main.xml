@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    프로그래스바, 시크바, 레이팅바 위젯
+    java.lang.Object
+            android.view.View
+                    android.widget.ProgressBar
+                    android.widget.AbsSeekBar
+                            android.widget.RatingBar
+                            android.widget.SeekBar
+    위의 세가지 위젯은 진행 상태를 표시하는 기능을 한다.
+
+    프로그래스바 : 작업의 진행 상태를 바나 원의 형태로 제공한다.
+                   바 형태는 어느정도 진행되었는지 확인할수 있지만,
+                   원 형태는 현재 진행 중이라는 상태만 보여 준다.
+                   주로 사용되는 XML속성에는 범위를 지정하는 max,
+                   시작지점을 지정하는 prgress,
+                   두번째 프로그래스바를 지정하는 seconddaryProgress등이 있다.
+     시크바 :  프로그래스바의 하위 클래스로, 프로그래스바와 대부분 비슷하며
+               사용자가 터치로 임의 조절이 가능하다.
+               음량을 조절하거나 동영상 재생 시 사용자가 재생 위치를 지정하는 용도로 사용함.
+     레이팅바 : 진행 상태를 별 모양으로 표시한다.
+                프로그래스바의 하위 클래스이므로 사용법이 비슷하다.
+                인터넷에서 서적, 음악, 영화등에 대한 선호도를 나타낼 때 주로 사용된다.
+                별의 개수를 정하는 numStars, 초기값을 지정하는 rating,
+                한번에 채워지는 개수를정하는  stepSize등의 XML속성이 주로 사용된다.
+
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <!--
+         프로그래스바의 범위를 최대 100으로 설정
+          android:max="100"
+         프로그래스바의 초기값을 20으로 설정
+          android:progress="20"
+
+         프로그래스바의 보조progress의 초기값을 50으로 설정
+         메인 progress보다 흐리게 표시된다.
+          android:secondaryProgress="50"
+    -->
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="20"
+        android:secondaryProgress="50"
+        />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:progress="20"
+        />
+
+    <!--
+        레이팅바의 별 개수 지정 ! 지정하지 않으면 기본 5개
+        android:numStars = 5
+
+        레이팅바의 초기값 설정 ! 1.5개가 채워진 상태로 표현
+        android:rating="1.5"
+
+        레이팅바의 한 스텝 크기 설정!
+        아래의 경우에는 총 5개의 별이 있으므로
+        총 열번의 스텝으로 구성됨
+         android:stepSize="0.5"
+
+     -->
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:numStars="5"
+        android:rating="1.5"
+        android:stepSize="0.5"
+        />
+
+
+</LinearLayout>

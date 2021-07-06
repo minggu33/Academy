@@ -1,0 +1,5 @@
+<DB의 저장영역 추가>
+1.새 T/S 생성(=Datafile 생성)
+2.기존 T/S에 Datafile 추가
+3.기존 Datafile의 사이즈 늘리기
+4.Datafile에 자동확장 기능 설정

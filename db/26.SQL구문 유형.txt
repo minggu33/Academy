@@ -1,0 +1,5 @@
+<SQL구문 유형>
+-DQL(데이터질의어) : select
+-DML(데이터조작어) : insert, update, delete, merge
+-DDL(데이터정의어) : create, alter, drop, truncate
+-DCL(데이터제어어) : grant, revoke

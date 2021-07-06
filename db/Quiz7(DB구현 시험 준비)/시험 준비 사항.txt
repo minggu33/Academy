@@ -1,0 +1,11 @@
+1. Controlfile 3개 다중화
+=> 본인 이름 약자가 들어가는 세번째 Controlfile 추가되어 있어야함.
+=> /home/oracle/control_OOO.ctl
+=> [필기] 폴더 - 28.Controlfile 다중화.txt 파일 참고해서 작업 수행
+
+2. Database를 Archive mode로 변경
+=> 교재 p74 참고해서 작업 수행
+
+3. Table 2개 생성
+=> 본인 이름 약자가 들어가는 members_OOO, products_OOO 테이블 준비
+=> [Quiz7] 폴더에 테이블 설계있음.

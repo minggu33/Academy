@@ -1,0 +1,2 @@
+rootProject.name = "ExOracle"
+include ':app'

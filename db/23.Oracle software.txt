@@ -1,0 +1,26 @@
+<Oracle Software>
+
+1. sqlplus
+- 터미널 환경 tool
+- 쿼리구문(DB관리 명령어, 일반 SQL구문)을 입력/실행/결과를 확인하는 프로그램
+- DBA, 개발자
+
+2. sql developer
+- 그래픽 환경의 tool
+- 쿼리구문(DQL, DML, DDL, DCL)을 입력/실행/결과를 확인하는 프로그램
+- 개발자 
+
+3. dbca
+- 그래픽 환경의 tool
+- DB를 생성/삭제하는 프로그램
+
+4. em
+- 웹브라우저 환경의 tool
+- DB 관리를 도와주는 프로그램
+- DBA
+- 주소 : https://localhost:1158/em
+		    ↑       ↑
+	     DB가 존재하는	   DB의 port#
+	Server의 Host명
+	(IP주소)
+
